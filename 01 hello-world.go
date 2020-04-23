@@ -1,10 +1,10 @@
 /*
- * @Author: 李星阳
- * @Date: 2020-04-22 12:09:49
- * @LastEditors: 李星阳
- * @LastEditTime: 2020-04-22 13:43:24
- * @Description: ain
- */
+* @Author: 李星阳
+* @Date: 2020-04-22 12:09:49
+* @LastEditors: 李星阳
+* @LastEditTime: 2020-04-22 13:43:24
+* @Description: ain
+*/
 package main
 
 import "fmt"
@@ -16,4 +16,3 @@ var helloWorld = "hello world" // 合法声明
 func main() {
 	fmt.Println(helloWorld)
 }
- 
