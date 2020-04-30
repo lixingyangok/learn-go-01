@@ -1,10 +1,20 @@
-<!--
- * @Author: 李星阳
- * @Date: 2020-04-28 13:38:58
- * @LastEditors: 李星阳
- * @LastEditTime: 2020-04-28 13:47:45
- * @Description: 
- -->
-# 变量
-多行声明
+# 字符相关
+```
+    var s01 = "磨穿铁砚-天道酬勤"
+    var s02 = "磨穿铁砚-天道酬勤"
+    fmt.Println("字节长度：")
+    fmt.Println("字符长度：")
+    fmt.Println("字符长度：")
+    fmt.Println("字符长度：")
+    fmt.Println("字符长度：")
+    fmt.Println("字符长度：")
+    fmt.Println("字符长度：")
+    fmt.Println("字符长度：")
+    fmt.Println("字符长度：")
+    
+```
+遍历字符串
+
+
+
 
