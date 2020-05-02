@@ -2,7 +2,7 @@
  * @Author: 李星阳
  * @Date: 2020-04-22 12:09:49
  * @LastEditors: 李星阳
- * @LastEditTime: 2020-04-30 12:44:56
+ * @LastEditTime: 2020-05-02 13:17:44
  * @Description: 
  */
 
@@ -16,4 +16,5 @@ var helloWorld = "hello world" // 合法声明
 
 func main() {
 	fmt.Println(helloWorld)
+	
 }
