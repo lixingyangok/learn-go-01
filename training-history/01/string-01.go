@@ -14,6 +14,7 @@ func main() {
 	pt("字节长度：", len(s01))
 	pt("字符长度：", len([]rune(s01)))
 	pt("拼接字符：", s01 + "----" + s02)
+	
 	pt("分割字符串为切片（按某字符）：", splitStr)
 	pt("分割之后的类型是：", reflect.TypeOf(splitStr)) //切片
 	pt("查看是否包含某字符：", strings.Contains(s01, "铁"))
