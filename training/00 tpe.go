@@ -1,3 +1,10 @@
+/*
+ * @Author: 李星阳
+ * @Date: 2020-05-03 13:04:35
+ * @LastEditors: 李星阳
+ * @LastEditTime: 2020-05-03 13:06:09
+ * @Description: 
+ */
 // 这里练习数据类型
 package main
 import (
@@ -35,8 +42,6 @@ func main() {
 	float01 = 1 //浮点可以被赋值整形
 	var float02 float32 = 0;
 	var float03 float64 = 0;
-
-
 	fmt.Println(
 		reflect.TypeOf(float01), reflect.TypeOf(float02), reflect.TypeOf(float03),
 		sLine,
