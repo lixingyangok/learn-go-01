@@ -13,6 +13,12 @@ import (
 	"strings"
 )
 var pt = fmt.Println
+func reverseStr(str string)(result string){
+	for _, cur := range str {
+		result = string(cur) + result
+	}
+	return result
+}
 
 func main() {
 	var s01 = "磨穿铁砚-"
@@ -36,5 +42,8 @@ func main() {
 	var numToStr02 = fmt.Sprintf("%v", 123.456) // 数字转文字（字符型数字
 	pt("数字转文字：", numToStr01)
 	pt("数字转文字：", numToStr02)
+
+	pt("反转字符：", reverseStr("123"))
 }
+
 
