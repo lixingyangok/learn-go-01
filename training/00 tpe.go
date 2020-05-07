@@ -2,7 +2,7 @@
  * @Author: 李星阳
  * @Date: 2020-05-03 13:04:35
  * @LastEditors: 李星阳
- * @LastEditTime: 2020-05-03 13:06:09
+ * @LastEditTime: 2020-05-06 13:54:30
  * @Description: 
  */
 // 这里练习数据类型
@@ -23,7 +23,7 @@ func main() {
 		sLine,
 	)
 	fmt.Println(
-		"\n", 'A', reflect.TypeOf('A'), //0被视为整形
+		"\n", 'A', reflect.TypeOf('A'),
 		"\n", "A", reflect.TypeOf("A"),
 		sLine,
 	)
