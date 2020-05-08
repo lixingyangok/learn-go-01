@@ -2,7 +2,7 @@
  * @Author: 李星阳
  * @Date: 2020-05-03 13:04:35
  * @LastEditors: 李星阳
- * @LastEditTime: 2020-05-07 13:22:34
+ * @LastEditTime: 2020-05-08 13:40:31
  * @Description: 
  */
 package main
@@ -18,6 +18,15 @@ func reverseStr(str string)(result string){
 		result = string(cur) + result
 	}
 	return result
+}
+func reverseStr02(str string)(string){
+	var myRune = []rune(str)
+	var length = len(myRune)
+	for idx := 0; idx < length / 2; idx++ {
+		var lastIdx = length-1-idx;
+		myRune[idx], myRune[lastIdx] = myRune[lastIdx], myRune[idx]
+	}
+	return string(myRune)
 }
 
 func main() {
@@ -44,6 +53,7 @@ func main() {
 	pt("数字转文字：", numToStr02)
 
 	pt("反转字符：", reverseStr("123"))
+	pt("反转字符：", reverseStr02("456"))
 }
 
 

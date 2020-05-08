@@ -1,3 +1,10 @@
+/*
+ * @Author: 李星阳
+ * @Date: 2020-04-23 13:20:43
+ * @LastEditors: 李星阳
+ * @LastEditTime: 2020-05-08 13:53:04
+ * @Description: 
+ */
 package main
 
 import "fmt"
@@ -21,7 +28,7 @@ func main() {
 	}
 	fmt.Println(sLine)
 
-	for idx := 0; idx < len(arr01); idx++ {
+	for idx := 0; idx < len(arr01); idx++ { //为什么这个会正常打印？
 		fmt.Print(arr01[idx])
 	}
 }
