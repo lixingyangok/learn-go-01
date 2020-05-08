@@ -21,9 +21,12 @@ func reverseStr(str string)(result string){
 }
 func reverseStr02(str string)(string){
 	var myRune = []rune(str)
-	var length = len(myRune)
+	var length int = len(myRune)
+	var result float32 = length / 2
+	fmt.Println(length, result)
 	for idx := 0; idx < length / 2; idx++ {
-		var lastIdx = length-1-idx;
+		fmt.Println(idx)
+		var lastIdx = length-1-idx
 		myRune[idx], myRune[lastIdx] = myRune[lastIdx], myRune[idx]
 	}
 	return string(myRune)
@@ -53,7 +56,7 @@ func main() {
 	pt("数字转文字：", numToStr02)
 
 	pt("反转字符：", reverseStr("123"))
-	pt("反转字符：", reverseStr02("456"))
+	pt("反转字符：", reverseStr02("123"))
 }
 
 
