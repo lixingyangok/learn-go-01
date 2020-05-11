@@ -31,4 +31,5 @@ func main() {
 	for idx := 0; idx < len(arr01); idx++ { //为什么这个会正常打印？
 		fmt.Print(arr01[idx])
 	}
+	
 }
