@@ -1,10 +1,3 @@
-/*
- * @Author: 李星阳
- * @Date: 2020-05-09 10:48:19
- * @LastEditors: 李星阳
- * @LastEditTime: 2020-05-11 13:31:36
- * @Description:
- */
 package main
 
 import (
@@ -13,8 +6,8 @@ import (
 )
 
 func main() {
-	var aa = 3 / 2                                     // =1, int型
-	
+	var aa = 3 / 2 // =1, int型
+
 	fmt.Println("3/2 =", aa, reflect.TypeOf(aa), "\n") // =1，int型
 
 	var bb = float32(3) / 2 //float32型
@@ -27,12 +20,12 @@ func main() {
 		reflect.TypeOf(bb),
 	)
 
+	fmt.Println("两个整数得整数：", 3/2, 3*2)
+	fmt.Println("两个浮点得浮点：", 1.5*2.0, reflect.TypeOf(1.5*2.0))
+	fmt.Println("有一浮点得浮点：", 3.0/1, 3/1.0, 3.0*1, 3*1.0) //通过 reflect.TypeOf() 它们便是 float64
 
-	// var a1 = 3 / 2		//两整相除，得整数
-	// var a3 = 3.0 / 1	//两，得小数
-	// var a2 = 3 / 2.0	//有一小数，得小数
-	// var a4 = 3 / 1.0
+	var n01 = 3
+	fmt.Println(n01 * 1.0 / 2) //1
+	fmt.Println(3 * 1.0 / 2)  //1.5
 
-	fmt.Println("整整得整：", 3/2)
-	fmt.Println("有一浮点得浮点：", 3.0/2, 3/2.0)
 }
