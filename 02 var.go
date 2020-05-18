@@ -16,11 +16,18 @@ var (
 	age  int
 )
 
+
 func main() {
-	var int01 = 0; //默认为int型，按设备，可能是int32，int64
+	var int01 = 0 //默认为int型，按设备，可能是int32，int64
+	var aa, bb = 11, 22 //批量声明
+
 	name = "Tom"
-	msg := "" //短声明只能用在函数中
+	msg := "" //短声明只能用在函数中，不能指定类型
 	msg = "how are you!"
 	fmt.Printf("Hi %s, %s, %s\n", name, msg, int01)
+	fmt.Printf(aa, bb)
 	fmt.Print("I'm fine thank you, and you?\n")
+
+
 }
+
