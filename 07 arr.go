@@ -3,6 +3,8 @@ package main
 import "fmt"
 
 func main() {
+	// 数组是【值】类型的，复制之后再修改不会影响原数组
+
 	fmt.Println("\n\n\n")
 	var a01 [3]int //声明时要指定：长度、成员类型。成员默认为零值：false, 0, "",
 	var a02 [3]bool

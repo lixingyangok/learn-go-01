@@ -13,6 +13,7 @@ var (
 	age  int
 )
 
+
 func main() {
 	/*
 		函数内部变量，是局部变量
@@ -23,6 +24,7 @@ func main() {
 	msg := "" //短声明，只能用在函数中
 	msg = "how are you!"
 	fmt.Printf("Hi %s, %s, %s\n", name, msg, int01)
+	fmt.Printf(aa, bb)
 	fmt.Print("I'm fine thank you, and you?\n")
 
 	var num01 = 100
@@ -30,3 +32,4 @@ func main() {
 	var f02 = 1.
 	fmt.Print(num01, f01, f02)
 }
+
