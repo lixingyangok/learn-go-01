@@ -1,10 +1,3 @@
-/*
- * @Author: 李星阳
- * @Date: 2020-04-23 13:20:43
- * @LastEditors: 李星阳
- * @LastEditTime: 2020-05-08 13:59:33
- * @Description: 
- */
 package main
 
 import "fmt"
