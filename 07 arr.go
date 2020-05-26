@@ -18,6 +18,12 @@ func main() {
 	fmt.Println(a05) // [10 0 30]
 	fmt.Println("------------------------\n")
 
+	var a100 [3]int
+	fmt.Println(a100)
+	a100 = [3]int{11,22,33}
+	fmt.Println(a100)
+
+
 	var a11 [2][2]int //一个长度为2的数组，成员为长度为3的数组 //[[0 0 0] [0 0 0]]
 	var a12 = [][2]string{ //长度可省略
 		[...]string{"A", "B"}, //长度不能省略，至少要写入...
