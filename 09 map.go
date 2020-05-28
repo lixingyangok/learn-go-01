@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+)
 
 func main() {
 	// 声明空map
@@ -17,9 +20,9 @@ func main() {
 	// m00[1] = "wrong" //报错，因为没有初始化
 	m01[1] = "OK"
 	m02[1] = "OK"
-	fmt.Println(m01, m01 == nil)      // 非nil
-	fmt.Println(m02, m02 == nil)      // 非nil
-	
+	fmt.Println(m01, m01 == nil) // 非nil
+	fmt.Println(m02, m02 == nil) // 非nil
+
 	// 声明同时初始化
 	var m11 = map[int]string{
 		1: "Tom",
@@ -28,9 +31,22 @@ func main() {
 	m11[3] = "Lucy"
 	fmt.Println(m11)
 
-	val, ok := m11[3];
-	val2, ok2 := m11[4];
+	val, ok := m11[3]
+	val2, ok2 := m11[4]
 	fmt.Println(ok, val)
 	fmt.Println(ok2, val2)
-}
 
+	for key, val := range m11 {
+		fmt.Println(key, val)
+	}
+	delete(m11, 1)
+	fmt.Println(m11)
+
+	var m12 = make(map[string]int, 5)
+	for idx := 0; idx < 5; idx++ {
+		key := fmt.Sprintf("stu%02d", idx)
+		fmt.Println(key, rand.Intn(100))
+		m12[key] = rand.Intn(100)
+	}
+	fmt.Println(m12)
+}
