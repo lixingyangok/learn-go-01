@@ -31,17 +31,20 @@ func main() {
 	m11[3] = "Lucy"
 	fmt.Println(m11)
 
+	// 查看某键是否在map中
 	val, ok := m11[3]
 	val2, ok2 := m11[4]
 	fmt.Println(ok, val)
 	fmt.Println(ok2, val2)
 
+	// 遍历一个map
 	for key, val := range m11 {
 		fmt.Println(key, val)
 	}
 	delete(m11, 1)
 	fmt.Println(m11)
 
+	// 通过遍历生成map
 	var m12 = make(map[string]int, 5)
 	for idx := 0; idx < 5; idx++ {
 		key := fmt.Sprintf("stu%02d", idx)
@@ -49,4 +52,9 @@ func main() {
 		m12[key] = rand.Intn(100)
 	}
 	fmt.Println(m12)
+
+
+	// 声明一个值为切片的map，然后不能立即赋值，如何解决？
+	// 例：How do you do? 统计各个单词出现的数量
+	
 }
