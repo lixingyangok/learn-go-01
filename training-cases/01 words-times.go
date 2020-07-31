@@ -6,25 +6,24 @@ import (
 )
 
 // 统计字符串中每个单词出现的次数
-
-func main() {
-	var sentence = "How do you do "
-	var aWordsSlice = strings.Split(sentence, " ")
+// 函数要明示其返回值类型
+func fn01(str string) map[string]int {
+	var aWordsSlice = strings.Split(str, " ")
 	var wordsMap = make(map[string]int, len(aWordsSlice))
 	for _, cur := range aWordsSlice {
 		var val, ok = wordsMap[cur]
-		// TODO 设法判断是否为不可见字符
-		// if !cur { 
-		// 	continue;
-		// }
 		if ok {
 			wordsMap[cur] = val + 1
 		} else {
 			wordsMap[cur] = 1
 		}
 	}
-	// fmt.Println(sentence);
-	// fmt.Println(aWordsSlice);
-	fmt.Println(wordsMap);
+	return wordsMap;
 }
 
+func main() {
+	var result01 = fn01("How do you do")
+	var result02 = fn01("Fine thank you, and you")
+	fmt.Println(result01)
+	fmt.Println(result02)
+}
