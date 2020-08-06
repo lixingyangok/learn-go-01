@@ -30,6 +30,7 @@ func main() {
 	fmt.Println(`字符串中某字索引-正序：`, strings.Index(s03, `"`))
 	fmt.Println(`字符串中某字索引-倒序：`, strings.LastIndex(s03, `"`))
 	fmt.Println(`将数组成员连成字符串：`, strings.Join(strings.Split("分,割", ","), "+"))
+	fmt.Println(`删除首尾空格`, strings.Trim("     	--abc123  - ", " -	"))
 	// fmt.Println(`将数组成员连成字符串：`, strings.Join(["11", "22", "33"], "+"))
 	fmt.Println("-------------------------")
 	for idx, cur := range s02 {

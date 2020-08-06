@@ -5,25 +5,26 @@ import (
 	"strings"
 )
 
-// 统计字符串中每个单词出现的次数
-// 函数要明示其返回值类型
-func fn01(str string) map[string]int {
-	var aWordsSlice = strings.Split(str, " ")
-	var wordsMap = make(map[string]int, len(aWordsSlice))
-	for _, cur := range aWordsSlice {
-		var val, ok = wordsMap[cur]
+// 查看一句英文中有多少单词
+const sentence01 = " hello world 你好 hello you   "
+const sentence02 = "hi how are you, are you ok"
+
+func fn01 (str string) (result map[string]int) {
+	step01 := strings.Split(str, " ") //分隔
+	result = make(map[string]int, len(step01))
+	for _, val := range step01 {
+		if len(val) == 0 { continue }
+		var iAmount, ok = result[val]
 		if ok {
-			wordsMap[cur] = val + 1
-		} else {
-			wordsMap[cur] = 1
+			result[val] = iAmount + 1;
+		}else {
+			result[val] = 1;
 		}
 	}
-	return wordsMap;
+	return
 }
 
 func main() {
-	var result01 = fn01("How do you do")
-	var result02 = fn01("Fine thank you, and you")
-	fmt.Println(result01)
-	fmt.Println(result02)
+	var test01 = fn01(sentence01)
+	fmt.Println(test01)
 }
