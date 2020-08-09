@@ -14,12 +14,14 @@ func main() {
 	var s02 = "字符串"
 	var s03 = `"多行"字符串` //多行字符声明
 	var s04 = s02[0] //多行字符声明
+	var s05 = "These are English words"
 	fmt.Println(s01, reflect.TypeOf(s01))
 	fmt.Println(s02, reflect.TypeOf(s02))
 	fmt.Println(s03, reflect.TypeOf(s03))
 	fmt.Println(s04, reflect.TypeOf(s04))
 	fmt.Println("-------------------------")
 	fmt.Println(`字符串长度：`, len(s02), len([]rune(s02)))
+	fmt.Println(`字符串大小写转换：`, strings.ToUpper(s05)) //ToLower
 	// fmt.Println(`字符串长度：`, utf8.RuneCountInString(s02))
 	fmt.Println(`字符串拼接：`, s02+s03)
 	fmt.Println(fmt.Sprintf(`字符串模板： 欢迎“%s”今天第“%s”次登录`, "小明", "3"))
