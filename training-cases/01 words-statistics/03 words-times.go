@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-func fn01(str string) (result map[string]int) {
+func fn03(str string) (result map[string]int) {
 	strSlice := strings.Split(str, " ")
 	result = make(map[string]int, len(strSlice))
 	
@@ -28,8 +28,8 @@ func main() {
 	const sentence01 = "	 hello world 你好 hello you   "
 	const sentence02 = "hi how are you, are you ok"
 
-	result01 := fn01(sentence01)
-	result02 := fn01(sentence02)
+	result01 := fn03(sentence01)
+	result02 := fn03(sentence02)
 	fmt.Println(result01)
 	fmt.Println(result02)
 }

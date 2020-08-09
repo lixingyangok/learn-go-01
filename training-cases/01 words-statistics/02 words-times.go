@@ -9,7 +9,7 @@ import (
 const sentence01 = " hello world 你好 hello you   "
 const sentence02 = "hi how are you, are you ok"
 
-func fn01 (str string) (result map[string]int) {
+func fn02 (str string) (result map[string]int) {
 	step01 := strings.Split(str, " ") //分隔
 	result = make(map[string]int, len(step01))
 	for _, val := range step01 {
@@ -25,6 +25,6 @@ func fn01 (str string) (result map[string]int) {
 }
 
 func main() {
-	var test01 = fn01(sentence01)
+	var test01 = fn02(sentence01)
 	fmt.Println(test01)
 }

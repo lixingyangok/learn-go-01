@@ -1,3 +1,4 @@
+//+build wireinject"：
 /*
  * @Author: 李星阳
  * @Date: 2020-04-22 12:09:49
