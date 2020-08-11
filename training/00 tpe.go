@@ -1,3 +1,4 @@
+//+build wireinject
 /*
  * @Author: 李星阳
  * @Date: 2020-05-03 13:04:35
@@ -12,7 +13,6 @@ import (
 	"reflect"
 )
 const sLine = "\n\n------------------------------------"
-
 func main() {
 	fmt.Println("\n\n\n\n■■ 开始 ■■■■■■■■■■■■■■■■■■■■■■■■■■")
 	fmt.Println(
