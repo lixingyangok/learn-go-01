@@ -1,3 +1,3 @@
-module learngo01/m
+module learning-go-01
 
 go 1.14

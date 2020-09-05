@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"./module01"
+	"learning-go-01/import-modules/module01"
 )
 
 func main() {
