@@ -1,4 +1,5 @@
-//+build wireinject"：
+// +build ignore
+
 package main
 
 import (
@@ -23,7 +24,7 @@ func fn01(str string) map[string]int {
 }
 
 func main() {
-	var result01 = fn01("How do you do")
+	var result01 = fn01("How do you do ")
 	var result02 = fn01("Fine thank you, and you")
 	fmt.Println(result01)
 	fmt.Println(result02)

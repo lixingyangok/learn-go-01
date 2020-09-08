@@ -1,3 +1,12 @@
+// +build ignore
+
+/*
+ * @Author: 李星阳
+ * @Date: 2020-08-07 20:40:41
+ * @LastEditors: 李星阳
+ * @LastEditTime: 2020-09-08 19:53:58
+ * @Description:
+ */
 package main
 
 import (
@@ -8,7 +17,7 @@ import (
 func fn03(str string) (result map[string]int) {
 	strSlice := strings.Split(str, " ")
 	result = make(map[string]int, len(strSlice))
-	
+
 	for _, val := range strSlice {
 		if len(val) == 0 {
 			continue
