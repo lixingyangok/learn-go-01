@@ -1,8 +1,7 @@
 // +build ignore
 
+// 2020.09.09 20:10:53 星期三
 package main
-
-// 2020.09.09 20:0:49 星期三
 
 import (
 	"fmt"
@@ -10,8 +9,8 @@ import (
 )
 
 func fn01(str string) (resultMap map[string]int) {
-	lowerString := strings.ToLower(str)
-	strArr := strings.Split(lowerString, " ")
+	lowerStr := strings.ToLower(str)
+	strArr := strings.Split(lowerStr, " ")
 	resultMap = make(map[string]int, len(strArr))
 	for _, val := range strArr {
 		_, exist := resultMap[val]
@@ -25,6 +24,7 @@ func fn01(str string) (resultMap map[string]int) {
 }
 
 func main() {
-	var result01 = fn01("Hello world hello you")
-	fmt.Println(result01)
+	fmt.Println(
+		fn01("Hello world hello you"),
+	)
 }
