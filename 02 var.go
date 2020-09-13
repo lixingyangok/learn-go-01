@@ -1,3 +1,5 @@
+// +build ignore
+
 package main
 
 import "fmt"
@@ -12,7 +14,6 @@ var (
 	name string
 	age  int
 )
-
 
 func main() {
 	/*
@@ -32,4 +33,3 @@ func main() {
 	var f02 = 1.
 	fmt.Print(num01, f01, f02)
 }
-

@@ -1,9 +1,11 @@
+// +build ignore
+
 package main
 
 import (
 	"fmt"
-	"strings"
 	"reflect"
+	"strings"
 	// "strconv"
 	// "utf8"
 )
@@ -13,8 +15,13 @@ func main() {
 	var s01 = '字' //单引号只能包裹一个字符
 	var s02 = "字符串"
 	var s03 = `"多行"字符串` //多行字符声明
-	var s04 = s02[0] //多行字符声明
+	var s04 = s02[0]    //多行字符声明
 	var s05 = "These are English words"
+	// 取下标
+	fmt.Println(string(s02[1])) //英文
+	fmt.Println(string([]rune(s02)[1]))
+	fmt.Println(string([]rune(s02)[7])) //中文
+	// 
 	fmt.Println(s01, reflect.TypeOf(s01))
 	fmt.Println(s02, reflect.TypeOf(s02))
 	fmt.Println(s03, reflect.TypeOf(s03))
@@ -36,8 +43,8 @@ func main() {
 	// fmt.Println(`将数组成员连成字符串：`, strings.Join(["11", "22", "33"], "+"))
 	fmt.Println("-------------------------")
 	for idx, cur := range s02 {
-		fmt.Print(idx, " - ", cur,  " - ") //索引【不准】
-		fmt.Printf("%c\n", cur) //能正常打印 byte 和 rune 类型
+		fmt.Print(idx, " - ", cur, " - ") //索引【不准】
+		fmt.Printf("%c\n", cur)           //能正常打印 byte 和 rune 类型
 	}
 	fmt.Println("-------------------------")
 	for idx, cur := range []rune(s02) {
@@ -45,18 +52,17 @@ func main() {
 	}
 	fmt.Println("-------------------------")
 
-
 	var str = "北京abc"
 	oneRune := []rune(str)
 	oneInt := oneRune[0]
 	oneStr := string(oneInt)
-	// 
+	//
 	fmt.Println(str, reflect.TypeOf(str))
 	fmt.Println(oneRune, reflect.TypeOf(oneRune))
 	fmt.Println(oneInt, reflect.TypeOf(oneInt))
 	fmt.Println(oneStr, reflect.TypeOf(oneStr))
 	// fmt.Print(str3, strtype)
-    // for i := 0; i < len(str2); i++ {
-    //     fmt.Println(str2[i])
-    // }
+	// for i := 0; i < len(str2); i++ {
+	//     fmt.Println(str2[i])
+	// }
 }

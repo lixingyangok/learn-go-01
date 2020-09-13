@@ -1,13 +1,6 @@
-//+build wireinject"：
-/*
- * @Author: 李星阳
- * @Date: 2020-04-22 12:09:49
- * @LastEditors: 李星阳
- * @LastEditTime: 2020-05-06 13:47:52
- * @Description: 
- */
-
 package main
+// 123+build wireinject"：
+
 
 import "fmt"
 
