@@ -1,10 +1,3 @@
-/*
- * @Author: 李星阳
- * @Date: 2020-09-11 11:21:22
- * @LastEditors: 李星阳
- * @LastEditTime: 2020-09-11 11:21:31
- * @Description: 
- */
 package main
 
 func main() {

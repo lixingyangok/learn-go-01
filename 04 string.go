@@ -11,18 +11,25 @@ import (
 )
 
 func main() {
-	fmt.Println("\n\n\n\n\n")
-	var s01 = '字' //单引号只能包裹一个字符
-	var s02 = "字符串"
+	fmt.Println("\n")
+	// ▼字符
+	var s00 byte = 97                                         //byte是uint8的别名
+	var s01 byte = 'a'                                        //单引号只能包裹一个字符
+	fmt.Println("数字与byte对比：", s00 == s01, s01 == 97)          // true
+	fmt.Println("byte类型就是uint8类型：", s00, reflect.TypeOf(s00)) //uint8
+	fmt.Println("byte的type类型：", s01, reflect.TypeOf(s01))     //uint8
+	// 分界===========================================================================
+	// ▼字符串
+	var s02 = "abc字符串"
 	var s03 = `"多行"字符串` //多行字符声明
-	var s04 = s02[0]    //多行字符声明
+	var s04 = s02[0]    //
 	var s05 = "These are English words"
-	// 取下标
-	fmt.Println(string(s02[1])) //英文
-	fmt.Println(string([]rune(s02)[1]))
-	fmt.Println(string([]rune(s02)[7])) //中文
-	// 
-	fmt.Println(s01, reflect.TypeOf(s01))
+	// ▼取下标
+	fmt.Println("直接取下标：", s02[0])                 //得到数字，因为字符的背后是 []byte
+	fmt.Println("取英文下标：", string(s02[1]))         //得到英文
+	fmt.Println("取中文下标：", string([]rune(s02)[3])) //得到中文
+
+	//
 	fmt.Println(s02, reflect.TypeOf(s02))
 	fmt.Println(s03, reflect.TypeOf(s03))
 	fmt.Println(s04, reflect.TypeOf(s04))

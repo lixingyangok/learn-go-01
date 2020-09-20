@@ -1,12 +1,5 @@
 // +build ignore
 
-/*
- * @Author: 李星阳
- * @Date: 2020-08-09 14:06:09
- * @LastEditors: 李星阳
- * @LastEditTime: 2020-09-08 19:58:54
- * @Description:
- */
 package main
 
 import (
