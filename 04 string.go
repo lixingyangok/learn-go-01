@@ -11,6 +11,7 @@ import (
 )
 
 func main() {
+	// strconv.Itoa(someNumber) 数字转字符
 	fmt.Println("\n")
 	// ▼字符
 	var s00 byte = 97                                         //byte是uint8的别名
