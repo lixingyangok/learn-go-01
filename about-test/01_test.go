@@ -23,6 +23,7 @@ import (
 
 
 func Test_fn01(t *testing.T) {
+	// 相同目录的多个文件中不能存在相同名称的函数名，即测试方法禁止重名
 	fmt.Println("test")
 	fmt.Println("test")
 	fmt.Println("test")
