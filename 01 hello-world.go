@@ -13,7 +13,10 @@ num01 := 100	//短声明只能放在主函数内
 */
 
 func main() {
+	var myStr = fmt.Sprintf("%s-123", "abc")
 	fmt.Println(helloWorld)
+	fmt.Println(myStr)
+
 	/* 
 		%d 打印整型数，十进制输出(如果d前面有数字，表示控制输出宽度，默认使用空白填充，%05d 会在不满5位时填充0)
 		%f 打印浮点数，正常输出（如果f前面有x.y 表示控制宽度和输出小数点位数，要对其，再加-，例如 %-10.5f）
