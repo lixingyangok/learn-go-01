@@ -6,43 +6,41 @@ import (
 	"fmt"
 	"strings"
 )
-// 2020.09.14 8:7:36 星期一
+// 2020.11.14 17:36:4 星期六
 
 var myMap = map[string]int{
-	"张": 3,
-	"李": 4,
+	"赵": 3,
+	"马": 4,
+	"张": 6,
+	"李": 9,
 	"王": 5,
-	"赵": 6,
-	"马": 9,
 }
 
-func fn01 (total int, theSlice []string) (map[string]int, int) {
-	result := map[string]int{}
-	for _, curName := range theSlice {
+func allocationCoins (
+	coinsTotal int, nameSlice []string, 
+) (
+	rest int, result map[string]int, 
+) {
+	// fmt.Println("nameSlice", nameSlice)
+	// fmt.Println("coinsTotal", coinsTotal)
+	result = map[string]int{}
+	rest = coinsTotal
+	for _, curName := range nameSlice {
 		needToGive := 0
-		for curFamilyName, curNum := range myMap {
+		for curFamilyName, num  := range myMap {
 			if strings.HasPrefix(curName, curFamilyName) {
-				needToGive = curNum
+				needToGive = num
 				continue
 			}
 		}
 		result[curName] = needToGive
-		total -= needToGive
+		rest -= needToGive
 	}
-	return result, total
+	return rest, result
 }
 
 func main() {
-	result, rest := fn01(25, []string{
-		"张三",
-		"张仨",
-		"李四",
-		"马英九",
-		"王五",
-		"赵六",
-		"司马七",
-		"诸葛八",
-	})
+	rest, result := allocationCoins(22, []string{"张三", "李四"})
 	fmt.Println(rest)
 	fmt.Println(result)
 }
