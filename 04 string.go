@@ -39,6 +39,7 @@ func main() {
 	fmt.Println(`字符串大小写转换：`, strings.ToUpper(s05)) //ToLower
 	// fmt.Println(`字符串长度：`, utf8.RuneCountInString(s02))
 	fmt.Println(`字符串拼接：`, s02+s03)
+	fmt.Println(`字符串重复：`, strings.Repeat("★", 3))
 	fmt.Println(fmt.Sprintf(`字符串模板： 欢迎“%s”今天第“%s”次登录`, "小明", "3"))
 	fmt.Println(`字符串分割：`, strings.Split("分,割", ",")) //分割为数组
 	fmt.Println(`字符串包含：`, strings.Contains(s02, "字"))
