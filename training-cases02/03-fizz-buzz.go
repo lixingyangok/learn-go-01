@@ -1,10 +1,9 @@
 // +build ignore
 
-package test
+package main
 
 import (
 	"fmt"
-	"testing"
 )
 
 // 解决这个叫做 Fizz-Buzz 的问题：
@@ -13,8 +12,11 @@ import (
 // 当是5的倍数就打印 “Buzz” 。
 // 当数字同时是3和5的倍数 时，打印 “FizzBuzz” 。
 
-func Test_fn01(t *testing.T) {
+func main() {
 	for idx := 1; idx <= 100; idx++ {
+		if idx%10==0{
+			fmt.Println()
+		}
 		if idx%3 == 0 && idx%5 == 0 {
 			fmt.Print("FizzBuzz ", idx, "、 ")
 			continue
