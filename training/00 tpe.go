@@ -1,18 +1,13 @@
-//+build wireinject
-/*
- * @Author: 李星阳
- * @Date: 2020-05-03 13:04:35
- * @LastEditors: 李星阳
- * @LastEditTime: 2020-05-06 13:54:30
- * @Description: 
- */
-// 这里练习数据类型
 package main
+
+// 这里练习数据类型
 import (
 	"fmt"
 	"reflect"
 )
+
 const sLine = "\n\n------------------------------------"
+
 func main() {
 	fmt.Println("\n\n\n\n■■ 开始 ■■■■■■■■■■■■■■■■■■■■■■■■■■")
 	fmt.Println(
@@ -46,8 +41,6 @@ func main() {
 		reflect.TypeOf(float01), reflect.TypeOf(float02), reflect.TypeOf(float03),
 		sLine,
 	)
-
-
 	// var int21 = 0.5;
 	// // var int02 = int64{0}
 	// fmt.Println(reflect.TypeOf(int12))
