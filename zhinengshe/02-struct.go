@@ -1,12 +1,5 @@
 // +build ignore
 
-/*
- * @Author: 李星阳
- * @Date: 2020-08-29 08:49:41
- * @LastEditors: 李星阳
- * @LastEditTime: 2020-08-29 15:30:30
- * @Description:
- */
 package main
 
 import "fmt"
