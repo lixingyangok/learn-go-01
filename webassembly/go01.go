@@ -1,4 +1,13 @@
+// +build ignore
+
 package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("这是从wasm打印的一段文字")
+}
+
 
 // import "syscall/js"
 
@@ -44,9 +53,3 @@ package main
 //     }
 //     return result[n]
 // }
-
-import "fmt"
-
-func main() {
-	fmt.Println("这是从wasm打印的一段文字")
-}

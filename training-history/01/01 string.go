@@ -2,9 +2,10 @@
  * @Author: 李星阳
  * @Date: 2020-05-03 13:04:35
  * @LastEditors: 李星阳
- * @LastEditTime: 2020-12-01 20:56:22
+ * @LastEditTime: 2020-12-02 20:42:16
  * @Description:
  */
+
 package main
 
 import (
@@ -24,7 +25,7 @@ func reverseStr(str string) (result string) {
 func reverseStr02(str string) string {
 	var myRune = []rune(str)
 	var length int = len(myRune)
-	var result float32 = length / 2
+	var result float32 = float32(length) / 2
 	fmt.Println(length, result)
 	for idx := 0; idx < length/2; idx++ {
 		fmt.Println(idx)
@@ -52,9 +53,9 @@ func main() {
 	for idx, val := range s01 {
 		fmt.Println(idx, "-", val, "-", string(val))
 	}
-	var numToStr01 = string(30952)              // 真·转文字
+	// var numToStr01 = string(30952)              // 真·转文字【这行能执行，报错】
 	var numToStr02 = fmt.Sprintf("%v", 123.456) // 数字转文字（字符型数字
-	pt("数字转文字：", numToStr01)
+	// pt("数字转文字：", numToStr01)
 	pt("数字转文字：", numToStr02)
 
 	pt("反转字符：", reverseStr("123"))
