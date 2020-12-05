@@ -46,12 +46,12 @@ func main() {
 	// }
 
     str:=[]byte(`{
-		"name": "张三",
-		"Age": 18,
-		"high": true,
-		"sex": "男",
-		"CLASS": {"naME": "1班", "GradE":3}
+		"name": "张三"
 	}`)
+	// "Age": 18,
+	// "high": true,
+	// "sex": "男",
+	// "CLASS": {"naME": "1班", "GradE":3}
 	// ▼此处可以直接 stu := new(StuRead), 此时的stu自身就是指针
 	var stu StuRead // 也可 stu:=StuRead{}
     // ▼ Unmarshal的第一个参数是json字符串，第二个参数是接受json解析的数据结构（2参必须是指针
