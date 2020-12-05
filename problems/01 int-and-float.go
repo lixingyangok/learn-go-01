@@ -10,10 +10,10 @@ import (
 func main() {
 	var aa = 3 / 2 // !=1.5 但却 =1, int型
 
-	fmt.Println("3/2 =", aa, reflect.TypeOf(aa), "\n") // =1，int型
+	fmt.Println("3/2 =", aa, reflect.TypeOf(aa)) // =1，int型
 
 	var bb = float32(3) / 2 //float32型
-	fmt.Println("float32(3) / 2 = ", bb, "\n")
+	fmt.Println("float32(3) / 2 = ", bb)
 
 	fmt.Println("3/1.5 =", 3/1.5, reflect.TypeOf(3/1.5)) // =2，float64型
 	fmt.Println("3/1.0 =", 3/1.0, reflect.TypeOf(3/1.0)) // =3，float64型
