@@ -7,29 +7,9 @@ import (
 	"fmt"
 )
 
-type Animal struct {
-    Name  string
-    Order string
-}
+
 
 func main() {
-	var jsonBlob = []byte(`[
-		{"Name": "Platypus", "Order": "Monotremata"},
-		{"Name": "Quoll好的",    "Order": "Dasyuromorphia"},
-		{"Name": "中文名字",    "Order": "Dasyuromorphia"}
-	]`)
-
-	var animals []Animal
-	
-	err := json.Unmarshal(jsonBlob, &animals)
-	if err != nil {
-		fmt.Println("error:", err)
-		return
-	}
-	fmt.Printf("%+v\n\n", animals)
-
-	// ▲上边是英文的情况，▼中文
-
 	type StuRead struct {
 		Name  interface{} `json:"name"`
 		Age   interface{}
@@ -38,18 +18,15 @@ func main() {
 		Class interface{} `json:"class"`
 		Test  interface{} //字符没有Test，所以值为nil 
 	}
-	
-	// 好像没用，再观察
-	// type Class struct {
+	// type Class struct { 	// 好像没用，再观察
 	// 	Name  string
 	// 	Grade int
 	// }
-
-    str:=[]byte(`{
+    str := []byte(`{
 		"name": "张三"
+		"high": true,
 	}`)
 	// "Age": 18,
-	// "high": true,
 	// "sex": "男",
 	// "CLASS": {"naME": "1班", "GradE":3}
 	// ▼此处可以直接 stu := new(StuRead), 此时的stu自身就是指针
@@ -62,5 +39,26 @@ func main() {
 		fmt.Println(err2)
 		return 
     }
-    fmt.Printf("%+v \n\n", stu)
+	fmt.Printf("解决一个结构体：\n%+v \n\n", stu)
+	
+	
+	// ▼解析切片
+	type Animal struct {
+		Name  string
+		Order string
+	}
+	var animals []Animal
+	
+	var jsonBlob = []byte(`[
+		{"Name": "Platypus", "Order": "Monotremata"},
+		{"Name": "Quoll好的",    "Order": "Dasyuromorphia"},
+		{"Name": "中文名字",    "Order": "Dasyuromorphia"}
+	]`)
+
+	err := json.Unmarshal(jsonBlob, &animals)
+	if err != nil {
+		fmt.Println("error:", err)
+		return
+	}
+	fmt.Printf("解析字符到切片：\n%+v\n\n", animals)
 }
