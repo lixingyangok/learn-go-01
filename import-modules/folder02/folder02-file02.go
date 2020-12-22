@@ -8,7 +8,7 @@
 
 package badpackagename
 
-// 一个包可由多个不同文件组成
+// 一个包可由多个不同文件组成（同级文件）
 
 // GetBiggest 取得最大数
 func GetBiggest(numbers ...int) (result int) {

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	// ▼ 引用自定义的包
 	// 工程名开头（即 go.mod 里面的工程名）这里是【learning-go-01】
-	// 后面跟包路径（具体到文件夹的名称）
+	// 工程名/文件夹/文件夹
 	"learning-go-01/import-modules/module01"
 
 	// ▼ 引用自定义的包（不良的包命名）
@@ -18,6 +18,7 @@ func main() {
 	sum := badpackagename.GetSumFn(6, 6, 6)
 	fmt.Println("和：", sum)
 	
+	// badpackagename.Abc()
 	biggest := badpackagename.GetBiggest(1, 2, 3)
 	biggest02 := badpackagename.GetBiggest([]int{4,5,6}...)
 	biggest03 := badpackagename.GetBiggest02([]interface{}{
