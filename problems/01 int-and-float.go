@@ -8,7 +8,7 @@ import (
 // 练习
 
 func main() {
-	var aa = 3 / 2 // !=1.5 但却 =1, int型
+	var aa = 3 / 2 // 应得1.5但却得到1, int型
 
 	fmt.Println("3/2 =", aa, reflect.TypeOf(aa)) // =1，int型
 
