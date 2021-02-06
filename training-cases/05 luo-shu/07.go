@@ -22,5 +22,7 @@ func main() {
 		}
 		slice01[lineNo][seatNo] = curVal
 	}
-	fmt.Printf("二维数组：\n%+v\n", slice01)
+	for _, cur := range slice01 {
+		fmt.Printf("%+v\n", cur)
+	}
 }
