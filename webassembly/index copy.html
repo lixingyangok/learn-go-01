@@ -26,7 +26,7 @@
         // 也就是运行 Go 代码里面的 main 函数
         // 这样 fib 函数就注册进了 Javascript 全局环境
         WebAssembly.instantiateStreaming(fetch("fib.wasm"), go.importObject).then((result) => {
-          console.log('result', result);
+            console.log('result', result);
             go.run(result.instance);
         });
 
