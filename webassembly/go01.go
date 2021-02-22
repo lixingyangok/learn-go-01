@@ -1,55 +1,54 @@
+// +build ignore123
+// 双击 build.cmd 可将此文件编译为 .wasm
+
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"syscall/js"
+)
 
-// ▼双击 build.cmd 可将此文件编译为 .wasm 
+// 通过递归计算第 i 个斐波那契数
+func fib(i int) int {
+	if i == 0 || i == 1 {
+		return 1
+	}
+	return fib(i-1) + fib(i-2)
+}
+
+func fibFunc(this js.Value, args []js.Value) interface{} {
+	return js.ValueOf(fib(args[0].Int()))
+}
+
+// function definition
+func add(this js.Value, i []js.Value) interface{} {
+	return js.ValueOf(i[0].Int() + i[1].Int())
+}
+
+func getBigNumber(n01 js.Value, args []js.Value) interface{}{
+	iTimes := args[0].Int()
+	iResult := 0
+	for idx := 0; idx < iTimes; idx++ {
+		iResult += idx
+	}
+	return js.ValueOf(iResult);
+}
+
 func main() {
 	fmt.Println("这是从wasm打印的一段文字 01");
-	fmt.Println("这是从wasm打印的一段文字 02");
+	/* 
+		alert := js.Global().Get("alert") // 获取全局的 alert 对象
+		alert.Invoke("Hello World!") // 等价于在 js 中调用 window.alert("Hello World")
+	*/
+
+	// exposing to JS
+	// 注册 go 的方法到 js 的 window 对象
+	js.Global().Set("addNumber", js.FuncOf(add))
+	js.Global().Set("getBigNumber", js.FuncOf(getBigNumber))
+
+	done := make(chan int, 0)
+	js.Global().Set("fibFunc", js.FuncOf(fibFunc))
+	<- done
 }
 
 
-// import "syscall/js"
-
-// go env -w GOOS=js 
-// go env -w GOARCH=wasm 
-// import "syscall/js"
-
-// func main() {
-// 	toLog := js.Global().get("console").get("log")
-// 	toLog.Invoke("123")
-// 	js.Global().Call("eval", `
-// 		console.log("456")
-// 	`)
-// }
-
-// func main() {
-//     f_fib := func(params []js.Value) {
-//         var n = params[0].Int()  // 输入参数
-//         var callback = params[1] // 回调参数
-//         var result = fib(n)
-//         // 调用回调函数，传入计算结果
-//         callback.Invoke(result)
-//     }
-//     // 注册全局函数
-//     js.Global().Set("fib", js.NewCallback(f_fib))
-//     // 保持 main 函数持续运行
-//     select {}
-// }
-
-// // 计算斐波那契数
-// func fib(n int) int {
-//     if n <= 0 {
-//         return 0
-//     }
-//     var result = make([]int, n+1)
-//     result[0] = 0
-//     result[1] = 1
-//     if n <= 1 {
-//         return result[n]
-//     }
-//     for i := 2; i <= n; i++ {
-//         result[i] = result[i-2] + result[i-1]
-//     }
-//     return result[n]
-// }
