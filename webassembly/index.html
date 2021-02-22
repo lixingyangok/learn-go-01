@@ -2,66 +2,84 @@
 <html lang="cn">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!-- <meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="theme-color" content="#000000" />
 		<meta name="description" content="Web site created using create-react-app" />
-		<link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-		<script src="./wasm_exec.js"></script>
-		<script>
-			WebAssembly.instantiateStreaming = async (resp, importObject) => {
-				const source = await (await resp).arrayBuffer();
-				console.log('source', source);
-				return await WebAssembly.instantiate(source, importObject);
-			};
-			// 容纳 WebAssembly 模块的容器
-			var go = new Go();
-			var request = Object.assign(new XMLHttpRequest(),{
-				responseType: 'arraybuffer', //配置数据返回类型
-				onload: loaded,
-			});
-			request.open('GET', 'test001.wasm', true); 
-			request.send();
-			async function loaded(){
-				var promise01 = new Promise(rsv=>{
-					rsv({
-						arrayBuffer: function(){
-							return new Promise(rsv02=>rsv02(request.response));
-						},
-					});
-				});
-				let result = await WebAssembly.instantiateStreaming(
-					promise01,
-					go.importObject,
-				);
-				console.log('result', result);
-				go.run(result.instance);
-				// go.run(result.instance);
-				// WebAssembly.instantiate(
-				//     request.response,
-				//     go.importObject,
-				// ).then(results => {
-				//     // results.instance.exports.exported_func();
-				//     console.log('results', results);
-				// });
-			}
-			// 下载 WebAssembly 模块并执行模块
-			// 也就是运行 Go 代码里面的 main 函数
-			// 这样 fib 函数就注册进了 Javascript 全局环境
-			// function callFib() {
-			//     let paramInput = document.getElementById("param")
-			//     let n = parseInt(paramInput.value || "0")
-			//     // 传入输入参数和回调函数
-			//     // 回调函数负责呈现结果
-			//     fib(n, function(result) {
-			//             var resultDom = document.getElementById("result")
-			//             resultDom.value = result
-			//     });
-			// }
-		</script>
-		<title>听写工具</title>
+		<link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" /> -->
+		<link rel="icon" href="https://cn.vuejs.org/images/logo.png" type="image/png">
+		<title>golong to wasm</title>
 	</head>
 	<body>
-		<h1>123</h1>
+		<h1>
+			调用 wasm 的方法：
+		</h1>
+		<h2>
+			计算结果：
+		</h2>
 	</body>
+	<!-- ▼ 引入 go  官方的文件  -->
+	<!-- ▼ 会生成一个名为 Go 的类 -->
+	<script src="./wasm_exec.js"></script>
+	<script>
+		// ▼ 第一步，请求文件
+		const request = Object.assign(new XMLHttpRequest(),{
+			responseType: 'arraybuffer', // 配置数据返回类型
+			onload: loadedFn,
+		});
+		request.open('GET', 'test001.wasm', true); 
+		request.send();
+
+
+		// ▼ 第2步，准备一个方法（覆盖原生的方法 WebAssembly.instantiateStreaming 
+		// 1参：一个 promise 对象
+		// 2参：xxxxxxxx
+		WebAssembly.instantiateStreaming = async (resp, importObject) => {
+			const step01 = await resp;
+			const source = await step01.arrayBuffer();
+			const result = await WebAssembly.instantiate(source, importObject);
+			// console.log('source', source);
+			return result;
+		};
+
+
+		// 容纳 WebAssembly 模块的容器
+		var go = new Go();
+		// ▼处理请求返回的数据，即 .wasm 文件
+		async function loadedFn(){
+			const {response} = request; // 得到请求返回的数据
+			const promise01 = new Promise(resolve01=>{
+				const oToReturn = {
+					// arrayBuffer: function(){ return new Promise(resolve02 => resolve02(response)); },
+					arrayBuffer: () => new Promise(resolve02 => resolve02(response)),
+				};
+				resolve01(oToReturn);
+			});
+			const result = await WebAssembly.instantiateStreaming(
+				promise01,
+				go.importObject,
+			);
+			// ▼得到最终结果
+			console.log('result001', result);
+			go.run(result.instance);
+			// go.run(result.instance);
+			// WebAssembly.instantiate(response, go.importObject).then(results => {
+			// 	console.log('result002', results);
+			// });
+		}
+
+
+		// 下载 WebAssembly 模块并执行模块
+		// 也就是运行 Go 代码里面的 main 函数
+		// 这样 fib 函数就注册进了 Javascript 全局环境
+		// function callFib() {
+		//     let paramInput = document.getElementById("param")
+		//     let n = parseInt(paramInput.value || "0")
+		//     // 传入输入参数和回调函数
+		//     // 回调函数负责呈现结果
+		//     fib(n, function(result) {
+		//             var resultDom = document.getElementById("result")
+		//             resultDom.value = result
+		//     });
+		// }
+	</script>
 </html>
