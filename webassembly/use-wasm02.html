@@ -36,16 +36,33 @@
 
 	</script>
 	<script>
-		function toTest(myTimes=100){
-			console.time('计时1');
+		function toTest01(myTimes=100){
+			console.time('js 计时');
 			var sum01 = 0;
 			for (var ii = myTimes; ii--;){
 				sum01 += ii;
 			}
-			console.timeEnd('计时1');
-			console.time('计时2');
+			console.timeEnd('js 计时');
+			// ===================================
+			console.time('go 计时');
 			var sum02 = getBigNumber(myTimes);
-			console.timeEnd('计时2');
+			console.timeEnd('go 计时');
+			// go的方法更慢
+			console.log('值1', sum01);
+			console.log('值2', sum02);
+			console.log('2次相等', sum01 === sum02);
+		}
+		function toTest02(myTimes=100){
+			console.time('js 计时');
+			var sum01 = 0;
+			for (var ii = myTimes; ii--;){
+				sum01 += 0.001;
+			}
+			console.timeEnd('js 计时');
+			// ===================================
+			console.time('go 计时');
+			var sum02 = getSum(myTimes);
+			console.timeEnd('go 计时');
 			// go的方法更慢
 			console.log('值1', sum01);
 			console.log('值2', sum02);

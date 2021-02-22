@@ -25,7 +25,6 @@ func Test_fn01(t *testing.T) {
 
 // ▼测试方法02
 func Test_fn02(t *testing.T) {
-	// 相同目录的多个测试文件中，不能存在相同名称的函数名，即测试方法禁止重名
 	aa := 4
 	bb := 8
 	fmt.Println("测试02-开始：●●●●●●●●●●●")

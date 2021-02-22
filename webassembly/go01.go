@@ -35,7 +35,7 @@ func getBigNumber(n01 js.Value, args []js.Value) interface{}{
 }
 
 func main() {
-	fmt.Println("这是从wasm打印的一段文字 01");
+	fmt.Println("这是从wasm打印的一段文字 go-01");
 	/* 
 		alert := js.Global().Get("alert") // 获取全局的 alert 对象
 		alert.Invoke("Hello World!") // 等价于在 js 中调用 window.alert("Hello World")
