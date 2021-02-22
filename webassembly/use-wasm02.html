@@ -1,0 +1,64 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Go wasmtitle</title>
+		<style>
+			body {
+				text-align: center
+			}
+			input {
+				height: 50px;
+				font-size: 20px;
+			}
+			#result {
+				margin-left: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Go wasmtitle</h1>
+		<h2>成功案例</h2>
+		<!--
+		<input type="number" id="param" oninput="callFib()"/>
+		<input type="text" id="result" />
+		-->
+	</body>
+	<!--  -->
+	<script src="wasm_exec.js"></script>
+	<script>
+		const sUrl = 'test001.wasm';
+		// 成功了
+		const go = new Go();
+
+		// 方法 01 
+		(async function(){
+			const p01 = await fetch(sUrl);
+			const p02 = await p01.arrayBuffer();
+			const result = await WebAssembly.instantiate(p02, go.importObject);
+			console.log('result 001\n', result);
+			go.run(result.instance);
+		})();
+
+		// 方法02
+		fetch(sUrl).then(response =>
+			response.arrayBuffer(),
+		).then(bytes =>
+			WebAssembly.instantiate(bytes, go.importObject),
+		).then(result => {
+			console.log('result 002\n', result);
+		});
+
+		// 方法03
+		function fetchAndInstantiate(url, importObject) {
+			return fetch(url).then(response =>
+				response.arrayBuffer(),
+			).then(bytes =>
+				WebAssembly.instantiate(bytes, importObject),
+			).then(results => results);
+		}
+		fetchAndInstantiate(sUrl, go.importObject).then(res=>{
+			console.log('result 003\n', res);
+		});
+
+	</script>
+</html>
