@@ -2,8 +2,10 @@ package main
 
 import "fmt"
 
+// ▼双击 build.cmd 可将此文件编译为 .wasm 
 func main() {
-	fmt.Println("这是从wasm打印的一段文字")
+	fmt.Println("这是从wasm打印的一段文字 01");
+	fmt.Println("这是从wasm打印的一段文字 02");
 }
 
 
