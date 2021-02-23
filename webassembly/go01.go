@@ -1,5 +1,5 @@
 // +build ignore123
-// 双击 build.cmd 可将此文件编译为 .wasm
+
 
 package main
 
