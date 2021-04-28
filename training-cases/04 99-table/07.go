@@ -1,0 +1,22 @@
+// +build ignore
+
+// 2021.04.28 20:8:1 星期三
+
+package main
+
+import (
+	"fmt"
+)
+
+func toPrint(){
+	for idx := 1; idx <=9; idx++ {
+		for i2 := 1; i2<=idx; i2++ {
+			fmt.Printf("%d * %d =%2d  ", i2, idx, i2*idx)
+		}
+		fmt.Printf("\n")
+	}
+}
+
+func main() {
+	toPrint()
+}
